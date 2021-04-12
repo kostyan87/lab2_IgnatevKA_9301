@@ -21,6 +21,8 @@ public class Main {
         myMap.insert('g', 1);
         myMap.printMap();
 
+        System.out.println(myMap.getSize());
+
         System.out.println(myMap.find('t'));
 
         myMap.remove('i');
@@ -32,6 +34,10 @@ public class Main {
         myMap.remove('n');
         myMap.remove('g');
 
-        myMap.printMap();
+        System.out.println(myMap.getSize());
+
+        myMap.insert('g', 88);
+
+        System.out.println(myMap.getSize());
     }
 }

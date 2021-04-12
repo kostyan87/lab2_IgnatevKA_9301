@@ -12,6 +12,10 @@ public interface Map<K, V> {
 
     boolean containsKey(K key);
 
+    boolean isEmpty();
+
+    int getSize();
+
     void clear();
 
     LinkedList<K> getKeys();

@@ -14,6 +14,32 @@ public class RBTreeMap<K extends Comparable<K>, V> implements Map<K, V> {
     }
 
     @Override
+    public boolean isEmpty() {
+        return  (root == Node.nil);
+    }
+
+    @Override
+    public int getSize() {
+        int size = 0;
+        RBTreeMap.Node<K, V> current = root;
+        Stack<Node> stack = new Stack();
+
+        if (isEmpty()) return 0;
+
+        stack.push(current);
+
+        while (stack.getSize() > 0)
+        {
+            current = stack.pop();
+            size++;
+            if (current.rightChild != RBTreeMap.Node.nil) stack.push(current.rightChild);
+            if (current.leftChild != RBTreeMap.Node.nil) stack.push(current.leftChild);
+        }
+
+        return size;
+    }
+
+    @Override
     public void insert(K key, V value) {
         Node<K, V> z = new Node<K, V>(key, value);
         Node<K, V> y = Node.nil;

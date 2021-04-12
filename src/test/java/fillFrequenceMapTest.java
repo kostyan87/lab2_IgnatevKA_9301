@@ -2,13 +2,12 @@ import Map.RBTreeMap;
 import Map.RBTreeUtils;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class fillFrequenceMapTest {
 
     @Test
-    void testFillString() {
+    void testNotEmptyString() {
 
         String expectedMap = "Node{key=i, value=3, color=true}\n" +
                              "Node{key=e, value=1, color=true}\n" +
