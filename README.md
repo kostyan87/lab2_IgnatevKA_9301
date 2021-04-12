@@ -1,1 +1,0 @@
-# lab2_IgnatevKA_9301
