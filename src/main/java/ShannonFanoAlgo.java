@@ -21,12 +21,11 @@ public class ShannonFanoAlgo {
         String codingS3 = coding(s3);
 
         System.out.println("Coding:");
-
-        System.out.println("First string:");
+        System.out.println("\nString: " + s1);
         System.out.println(coding(s1));
-        System.out.println("Second string:");
+        System.out.println("\nString: " + s2);
         System.out.println(coding(s2));
-        System.out.println("Third string:");
+        System.out.println("\nString: " + s3);
         System.out.println(coding(s3));
 
 
@@ -38,7 +37,7 @@ public class ShannonFanoAlgo {
         getPrefixCodes(mapOfCodes2, frequenceMap2, "", 'n');
         getPrefixCodes(mapOfCodes3, frequenceMap3, "", 'n');
 
-        System.out.println("Encoding:");
+        System.out.println("\nEncoding:");
 
         System.out.println("First string:");
         System.out.println(encoding(codingS1, mapOfCodes1));
@@ -55,12 +54,14 @@ public class ShannonFanoAlgo {
         double compressionСoefficient;
 
         fillFrequenceMap(s, frequenceMap);
-        //frequenceMap.printMap();
+        System.out.println("Frequence table: ");
+        frequenceMap.printMap();
         getPrefixCodes(mapOfCodes, frequenceMap,"", 'n');
+        System.out.println("Codes table: ");
         mapOfCodes.printMap();
         codingString = getCodingString(mapOfCodes, s);
         compressionСoefficient = (s.length() * 8.0) / codingString.length();
-        System.out.println(compressionСoefficient);
+        System.out.println("Compression coefficient: " + compressionСoefficient + "\n");
 
         return codingString;
     }
